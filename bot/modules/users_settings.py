@@ -61,6 +61,70 @@ advanced_options = [
 ]
 yt_options = ["YT_DESP", "YT_TAGS", "YT_CATEGORY_ID", "YT_PRIVACY_STATUS"]
 
+video_encode_options = [
+    "VIDEO_ENCODE_PRESET",
+    "VIDEO_ENCODE_QUALITY",
+    "VIDEO_ENCODE_CRF",
+    "VIDEO_ENCODE_AUDIO_BITRATE",
+]
+
+watermark_options = [
+    "WATERMARK_TEXT",
+    "WATERMARK_TYPE",
+    "WATERMARK_IMAGE_PATH",
+    "WATERMARK_POSITION",
+    "WATERMARK_OPACITY",
+    "WATERMARK_TEXT_BG",
+    "WATERMARK_FONT",
+    "WATERMARK_SIZE",
+    "WATERMARK_COLOR",
+    "WATERMARK_DURATION",
+    "WATERMARK_SECONDS",
+]
+
+stream_options = [
+    "KEEP_SOURCE",
+    "STREAM_EXTRACT_OPTIONS",
+    "STREAM_REMOVE_OPTIONS",
+    "STREAM_SWAP_OPTIONS",
+]
+
+video_video_options = [
+    "VIDEO_STREAM_1",
+    "VIDEO_STREAM_2",
+    "VIDEO_MERGE_OPTIONS",
+    "VIDEO_OVERLAY_OPTIONS",
+    "VIDEO_CONCAT_OPTIONS",
+    "VIDEO_SPLIT_OPTIONS",
+]
+
+video_audio_options = [
+    "AUDIO_TRACK_1",
+    "AUDIO_TRACK_2",
+    "AUDIO_MIX_OPTIONS",
+    "AUDIO_REPLACE_OPTIONS",
+    "AUDIO_SYNC_OPTIONS",
+    "AUDIO_VOLUME_OPTIONS",
+]
+
+video_subtitle_options = [
+    "SUBTITLE_FILE",
+    "SUBTITLE_EMBED_OPTIONS",
+    "SUBTITLE_BURN_OPTIONS",
+    "SUBTITLE_STYLE_OPTIONS",
+    "SUBTITLE_POSITION_OPTIONS",
+    "SUBTITLE_LANGUAGE_OPTIONS",
+]
+
+rename_options = [
+    "RENAME_PATTERN",
+    "RENAME_PREFIX",
+    "RENAME_SUFFIX",
+    "RENAME_EXTENSION",
+    "RENAME_CASE_OPTIONS",
+    "RENAME_REPLACE_OPTIONS",
+]
+
 user_settings_text = {
     "THUMBNAIL": (
         "Photo or Doc",
@@ -254,6 +318,228 @@ Here I will explain how to use mltb.* which is reference to files you want to wo
         "File",
         "User's YT-DLP Cookie File to authenticate access to websites and youtube.",
         "<i>Send your cookie file (e.g., cookies.txt or abc.txt).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # Video Encoding Settings
+    "VIDEO_ENCODE_PRESET": (
+        "String",
+        "Set the encoding preset for videos. Available options: ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow.",
+        "<i>Send encoding preset (ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_ENCODE_QUALITY": (
+        "String",
+        "Set video resolution/quality. Options: 1080p, 720p, 576p, 480p, 360p, Original.",
+        "<i>Send video quality (1080p, 720p, 576p, 480p, 360p, Original).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_ENCODE_CRF": (
+        "Number",
+        "Constant Rate Factor controls quality. Lower values = higher quality but larger files. Range: 0-51.",
+        "<i>Send CRF value (18-30 recommended, 23 is default).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_ENCODE_AUDIO_BITRATE": (
+        "String",
+        "Audio bitrate determines sound quality. Higher values = better audio but larger files.",
+        "<i>Send audio bitrate (64k, 96k, 128k, 192k, 256k, 320k).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # Watermark Settings
+    "WATERMARK_TEXT": (
+        "String",
+        "Text to display as watermark on videos.",
+        "<i>Send watermark text content.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_TYPE": (
+        "String",
+        "Type of watermark: text or image.",
+        "<i>Send watermark type (text or image).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_IMAGE_PATH": (
+        "File",
+        "Image file to use as watermark.",
+        "<i>Send image file for watermark.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_POSITION": (
+        "String",
+        "Position of watermark on video (top-left, top-right, bottom-left, bottom-right, center).",
+        "<i>Send watermark position (top-left, top-right, bottom-left, bottom-right, center).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_OPACITY": (
+        "Number",
+        "Watermark transparency level (0.0 to 1.0, where 1.0 is fully opaque).",
+        "<i>Send opacity value (0.0 to 1.0, e.g., 0.7).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_TEXT_BG": (
+        "Boolean",
+        "Enable background for text watermark.",
+        "<i>Send true or false for text background.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_FONT": (
+        "String",
+        "Font family for text watermark.",
+        "<i>Send font name (Arial, Times, Helvetica, etc.).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_SIZE": (
+        "String",
+        "Size of watermark (small, medium, large).",
+        "<i>Send watermark size (small, medium, large).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_COLOR": (
+        "String",
+        "Color of watermark text in hex format.",
+        "<i>Send color in hex format (e.g., #FFFFFF for white).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_DURATION": (
+        "String",
+        "Duration for watermark display (full, start, end, custom).",
+        "<i>Send duration type (full, start, end, custom).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "WATERMARK_SECONDS": (
+        "Number",
+        "Specific timing in seconds for watermark display.",
+        "<i>Send duration in seconds.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # Stream Processing Settings
+    "KEEP_SOURCE": (
+        "Boolean",
+        "Keep original source files after processing.",
+        "<i>Send true or false to keep source files.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "STREAM_EXTRACT_OPTIONS": (
+        "Dict",
+        "Options for extracting specific streams from media files.",
+        "<i>Send dict of stream extraction options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "STREAM_REMOVE_OPTIONS": (
+        "Dict",
+        "Options for removing specific streams from media files.",
+        "<i>Send dict of stream removal options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "STREAM_SWAP_OPTIONS": (
+        "Dict",
+        "Options for swapping/reordering streams in media files.",
+        "<i>Send dict of stream swapping options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # Video + Video Processing Settings
+    "VIDEO_STREAM_1": (
+        "String",
+        "Primary video input stream configuration.",
+        "<i>Send video stream 1 configuration.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_STREAM_2": (
+        "String",
+        "Secondary video input stream configuration.",
+        "<i>Send video stream 2 configuration.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_MERGE_OPTIONS": (
+        "Dict",
+        "Options for merging multiple video streams.",
+        "<i>Send dict of video merge options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_OVERLAY_OPTIONS": (
+        "Dict",
+        "Options for overlaying one video on another.",
+        "<i>Send dict of video overlay options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_CONCAT_OPTIONS": (
+        "Dict",
+        "Options for concatenating videos sequentially.",
+        "<i>Send dict of video concatenation options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "VIDEO_SPLIT_OPTIONS": (
+        "Dict",
+        "Options for splitting video into segments.",
+        "<i>Send dict of video split options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # Video + Audio Processing Settings
+    "AUDIO_TRACK_1": (
+        "String",
+        "Primary audio track configuration.",
+        "<i>Send audio track 1 configuration.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "AUDIO_TRACK_2": (
+        "String",
+        "Secondary audio track configuration.",
+        "<i>Send audio track 2 configuration.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "AUDIO_MIX_OPTIONS": (
+        "Dict",
+        "Options for mixing multiple audio tracks.",
+        "<i>Send dict of audio mix options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "AUDIO_REPLACE_OPTIONS": (
+        "Dict",
+        "Options for replacing video audio track.",
+        "<i>Send dict of audio replacement options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "AUDIO_SYNC_OPTIONS": (
+        "Dict",
+        "Options for synchronizing audio with video.",
+        "<i>Send dict of audio sync options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "AUDIO_VOLUME_OPTIONS": (
+        "Dict",
+        "Options for adjusting audio volume levels.",
+        "<i>Send dict of audio volume options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # Video + Subtitle Processing Settings
+    "SUBTITLE_FILE": (
+        "File",
+        "Subtitle file to embed or burn into video.",
+        "<i>Send subtitle file (e.g., subtitles.srt).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "SUBTITLE_EMBED_OPTIONS": (
+        "Dict",
+        "Options for embedding subtitles in video container.",
+        "<i>Send dict of subtitle embed options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "SUBTITLE_BURN_OPTIONS": (
+        "Dict",
+        "Options for burning subtitles permanently into video.",
+        "<i>Send dict of subtitle burn options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "SUBTITLE_STYLE_OPTIONS": (
+        "Dict",
+        "Options for configuring subtitle appearance and style.",
+        "<i>Send dict of subtitle style options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "SUBTITLE_POSITION_OPTIONS": (
+        "Dict",
+        "Options for setting subtitle position on screen.",
+        "<i>Send dict of subtitle position options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "SUBTITLE_LANGUAGE_OPTIONS": (
+        "Dict",
+        "Options for setting subtitle language metadata.",
+        "<i>Send dict of subtitle language options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    # File Rename Settings
+    "RENAME_PATTERN": (
+        "String",
+        "Pattern for renaming files with variables and placeholders.",
+        "<i>Send rename pattern (e.g., {filename}_{date}).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "RENAME_PREFIX": (
+        "String",
+        "Prefix to add to the beginning of filenames.",
+        "<i>Send filename prefix.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "RENAME_SUFFIX": (
+        "String",
+        "Suffix to add to the end of filenames (before extension).",
+        "<i>Send filename suffix.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "RENAME_EXTENSION": (
+        "String",
+        "New file extension to replace the original.",
+        "<i>Send new file extension (e.g., mp4, mkv).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "RENAME_CASE_OPTIONS": (
+        "String",
+        "Options for changing filename case (upper, lower, title).",
+        "<i>Send case option (upper, lower, title).</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
+    ),
+    "RENAME_REPLACE_OPTIONS": (
+        "Dict",
+        "Options for finding and replacing text in filenames.",
+        "<i>Send dict of find/replace options.</i> \n┖ <b>Time Left :</b> <code>60 sec</code>",
     ),
 }
 
@@ -673,6 +959,11 @@ async def get_user_settings(from_user, stype="main"):
             )
             display_subtitle_meta = f"<code>{display_subtitle_meta}</code>"
 
+        buttons.data_button("Video Encode", f"userset {user_id} video_encode")
+        
+        # Main Video Processing Menu button
+        buttons.data_button("Video Processing", f"userset {user_id} video_processing")
+
         buttons.data_button("Back", f"userset {user_id} back", "footer")
         buttons.data_button("Close", f"userset {user_id} close", "footer")
         btns = buttons.build_menu(2)
@@ -743,6 +1034,248 @@ async def get_user_settings(from_user, stype="main"):
 ┠ <b>Upload Paths</b> → <b>{upload_paths}</b>
 ┠ <b>YT-DLP Options</b> → <code>{ytopt}</code>
 ┖ <b>YT User Cookie File</b> → <b>{user_cookie_msg}</b>"""
+    elif stype == "video_encode":
+        buttons.data_button("Preset", f"userset {user_id} video_preset")
+        current_preset = user_dict.get("VIDEO_ENCODE_PRESET", "medium")
+        
+        buttons.data_button("Quality", f"userset {user_id} video_quality")
+        current_quality = user_dict.get("VIDEO_ENCODE_QUALITY", "Original")
+        
+        buttons.data_button("CRF", f"userset {user_id} video_crf")
+        current_crf = user_dict.get("VIDEO_ENCODE_CRF", 23)
+        
+        buttons.data_button("Audio Bitrate", f"userset {user_id} audio_bitrate")
+        current_audio_bitrate = user_dict.get("VIDEO_ENCODE_AUDIO_BITRATE", "128k")
+
+        buttons.data_button("Back", f"userset {user_id} ffset", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        text = f"""⌬ <b>Video Encode Settings :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>Preset</b> → <code>{current_preset}</code>
+┠ <b>Quality</b> → <code>{current_quality}</code>
+┠ <b>CRF</b> → <code>{current_crf}</code>
+┖ <b>Audio Bitrate</b> → <code>{current_audio_bitrate}</code>"""
+
+    elif stype == "video_quality":
+        current_quality = user_dict.get("VIDEO_ENCODE_QUALITY", "Original")
+        
+        # Quality option buttons
+        quality_options = [
+            ("1080p", "1080p"),
+            ("720p", "720p"),
+            ("576p", "576p"),
+            ("480p", "480p"),
+            ("360p", "360p"),
+            ("Original", "Original")
+        ]
+        
+        for quality_text, quality_value in quality_options:
+            button_text = f"✓ {quality_text}" if current_quality == quality_value else quality_text
+            buttons.data_button(button_text, f"userset {user_id} set_quality {quality_value}")
+
+        buttons.data_button("Back", f"userset {user_id} video_encode", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        text = f"""⌬ <b>Video Encoding Quality :</b>
+┟ <b>Current Quality</b> → <code>{current_quality}</code>
+┃
+┠ <b>1080p</b> → Full HD, high quality (bitrate ~2000-2500k)
+┠ <b>720p</b> → HD, balanced quality (bitrate ~1000-1500k)
+┠ <b>576p</b> → PAL DVD quality (bitrate ~800-1000k)
+┠ <b>480p</b> → DVD quality, medium size (bitrate ~500-800k)
+┠ <b>360p</b> → Low resolution, small size (bitrate ~300-400k)
+┖ <b>Original</b> → Keep original resolution, only apply preset"""
+
+    elif stype == "video_crf":
+        current_crf = user_dict.get("VIDEO_ENCODE_CRF", 23)
+        
+        # CRF option buttons
+        crf_options = [
+            (18, "18"),
+            (20, "20"),
+            (23, "23"),
+            (25, "25"),
+            (28, "28"),
+            (30, "30")
+        ]
+        
+        for crf_value, crf_text in crf_options:
+            button_text = f"✓ {crf_text}" if current_crf == crf_value else crf_text
+            buttons.data_button(button_text, f"userset {user_id} set_crf {crf_value}")
+
+        buttons.data_button("Back", f"userset {user_id} video_encode", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(3)
+
+        text = f"""⌬ <b>Video Encoding CRF :</b>
+┟ <b>Current CRF</b> → <code>{current_crf}</code>
+┃
+┠ <b>What is CRF?</b>
+┠ CRF (Constant Rate Factor) controls quality.
+┠ Lower values = higher quality but larger files.
+┠ Higher values = smaller files but lower quality.
+┃
+┠ <b>18</b> → Very high quality (visually lossless)
+┠ <b>20</b> → High quality
+┠ <b>23</b> → Default, good quality
+┠ <b>25</b> → Standard quality, smaller size
+┠ <b>28</b> → Lower quality, small size
+┖ <b>30</b> → Low quality, very small size"""
+
+    elif stype == "audio_bitrate":
+        current_bitrate = user_dict.get("VIDEO_ENCODE_AUDIO_BITRATE", "128k")
+        
+        # Audio bitrate option buttons
+        bitrate_options = [
+            ("64k", "64k"),
+            ("96k", "96k"),
+            ("128k", "128k"),
+            ("192k", "192k"),
+            ("256k", "256k"),
+            ("320k", "320k")
+        ]
+        
+        for bitrate_value, bitrate_text in bitrate_options:
+            button_text = f"✓ {bitrate_text}" if current_bitrate == bitrate_value else bitrate_text
+            buttons.data_button(button_text, f"userset {user_id} set_audio_bitrate {bitrate_value}")
+
+        buttons.data_button("Back", f"userset {user_id} video_encode", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(3)
+
+        text = f"""⌬ <b>Audio Bitrate for Encoding :</b>
+┟ <b>Current Bitrate</b> → <code>{current_bitrate}</code>
+┃
+┠ <b>What is Audio Bitrate?</b>
+┠ Audio bitrate determines sound quality.
+┠ Higher values = better audio but larger files.
+┃
+┠ <b>64k</b> → Low quality, smallest size
+┠ <b>96k</b> → Basic quality, very small size
+┠ <b>128k</b> → Standard quality (default)
+┠ <b>192k</b> → Good quality, balanced size
+┠ <b>256k</b> → Very good quality
+┖ <b>320k</b> → Excellent quality, largest size"""
+
+    elif stype == "video_preset":
+        current_preset = user_dict.get("VIDEO_ENCODE_PRESET", "medium")
+        
+        # Preset option buttons
+        preset_options = [
+            ("ultrafast", "ultrafast"),
+            ("superfast", "superfast"),
+            ("veryfast", "veryfast"),
+            ("faster", "faster"),
+            ("fast", "fast"),
+            ("medium", "medium"),
+            ("slow", "slow"),
+            ("slower", "slower"),
+            ("veryslow", "veryslow")
+        ]
+        
+        for preset_value, preset_text in preset_options:
+            button_text = f"✓ {preset_text}" if current_preset == preset_value else preset_text
+            buttons.data_button(button_text, f"userset {user_id} set_preset {preset_value}")
+
+        buttons.data_button("Back", f"userset {user_id} video_encode", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(3)
+
+        text = f"""⌬ <b>Video Encoding Preset :</b>
+┟ <b>Current Preset</b> → <code>{current_preset}</code>
+┃
+┠ <b>Description</b> → Set the encoding preset for videos.
+┠ Available options: ultrafast, superfast, veryfast,
+┠ faster, fast, medium, slow, slower, veryslow.
+┃
+┠ <b>Speed vs Quality Trade-off:</b>
+┠ • Faster presets = quicker encoding, larger files
+┖ • Slower presets = better compression, smaller files"""
+
+    elif stype == "video_processing":
+        buttons.data_button("FFMPEG CMD", f"userset {user_id} menu FFMPEG_CMDS")
+        buttons.data_button("MegaMetaData", f"userset {user_id} menu METADATA")
+        
+        buttons.data_button("Video + Video", f"userset {user_id} video_video")
+        
+        buttons.data_button("Video + Audio", f"userset {user_id} video_audio")
+        buttons.data_button("Video + Subtitle", f"userset {user_id} video_subtitle")
+        
+        buttons.data_button("Stream Swap-Wap", f"userset {user_id} menu STREAM_SWAP_OPTIONS")
+        
+        buttons.data_button("Stream Extract", f"userset {user_id} menu STREAM_EXTRACT_OPTIONS")
+        buttons.data_button("Stream Rem", f"userset {user_id} menu STREAM_REMOVE_OPTIONS")
+        
+        buttons.data_button("Video Encode", f"userset {user_id} video_encode")
+        
+        buttons.data_button("Watermark", f"userset {user_id} watermark")
+        
+        buttons.data_button("Keep Source", f"userset {user_id} menu KEEP_SOURCE")
+        
+        buttons.data_button("Rename", f"userset {user_id} rename")
+
+        buttons.data_button("Back", f"userset {user_id} ffset", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        text = f"""⌬ <b>Video Processing Menu :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>FFMPEG CMD</b> → Custom FFMPEG commands
+┠ <b>MegaMetaData</b> → Global metadata settings
+┠ <b>Video + Video</b> → Video stream processing
+┠ <b>Video + Audio</b> → Audio stream processing
+┠ <b>Video + Subtitle</b> → Subtitle processing
+┠ <b>Stream Swap-Wap</b> → Stream reordering
+┠ <b>Stream Extract</b> → Extract specific streams
+┠ <b>Stream Rem</b> → Remove streams
+┠ <b>Video Encode</b> → Video encoding settings
+┠ <b>Watermark</b> → Watermark configuration
+┠ <b>Keep Source</b> → Preserve original files
+┖ <b>Rename</b> → File renaming options"""
+
+    elif stype == "watermark":
+        buttons.data_button("Set Text", f"userset {user_id} menu WATERMARK_TEXT")
+        buttons.data_button("WM-Type", f"userset {user_id} menu WATERMARK_TYPE")
+        buttons.data_button("Set Image", f"userset {user_id} menu WATERMARK_IMAGE_PATH")
+        
+        buttons.data_button("Position", f"userset {user_id} menu WATERMARK_POSITION")
+        buttons.data_button("Opacity", f"userset {user_id} menu WATERMARK_OPACITY")
+        buttons.data_button("Text-BG", f"userset {user_id} menu WATERMARK_TEXT_BG")
+        
+        buttons.data_button("Custom-Fo", f"userset {user_id} menu WATERMARK_FONT")
+        buttons.data_button("Size", f"userset {user_id} menu WATERMARK_SIZE")
+        buttons.data_button("Colour", f"userset {user_id} menu WATERMARK_COLOR")
+        
+        buttons.data_button("WM-Duration", f"userset {user_id} menu WATERMARK_DURATION")
+        buttons.data_button("WM-Seconds", f"userset {user_id} menu WATERMARK_SECONDS")
+
+        buttons.data_button("Back", f"userset {user_id} video_processing", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(3)
+
+        # Get current watermark settings
+        wm_text = user_dict.get("WATERMARK_TEXT", "Not Set")
+        wm_type = user_dict.get("WATERMARK_TYPE", "text")
+        wm_position = user_dict.get("WATERMARK_POSITION", "bottom-right")
+        wm_opacity = user_dict.get("WATERMARK_OPACITY", 0.7)
+        wm_size = user_dict.get("WATERMARK_SIZE", "medium")
+        wm_color = user_dict.get("WATERMARK_COLOR", "#FFFFFF")
+
+        text = f"""⌬ <b>Watermark Settings :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>Text</b> → <code>{escape(str(wm_text))}</code>
+┠ <b>Type</b> → <code>{wm_type}</code>
+┠ <b>Position</b> → <code>{wm_position}</code>
+┠ <b>Opacity</b> → <code>{wm_opacity}</code>
+┠ <b>Size</b> → <code>{wm_size}</code>
+┖ <b>Color</b> → <code>{wm_color}</code>"""
+
     elif stype == "yttools":
         buttons.data_button("YT Description", f"userset {user_id} menu YT_DESP")
         yt_desp_val = user_dict.get(
@@ -792,6 +1325,103 @@ async def get_user_settings(from_user, stype="main"):
 ┠ <b>YT Category ID</b> → <code>{escape(str(yt_cat_id_val))}</code>
 ┖ <b>YT Privacy Status</b> → <code>{escape(str(yt_privacy_val))}</code>"""
 
+    elif stype == "video_video":
+        buttons.data_button("Video Stream 1", f"userset {user_id} menu VIDEO_STREAM_1")
+        buttons.data_button("Video Stream 2", f"userset {user_id} menu VIDEO_STREAM_2")
+        buttons.data_button("Video Merge", f"userset {user_id} menu VIDEO_MERGE_OPTIONS")
+        
+        buttons.data_button("Video Overlay", f"userset {user_id} menu VIDEO_OVERLAY_OPTIONS")
+        buttons.data_button("Video Concat", f"userset {user_id} menu VIDEO_CONCAT_OPTIONS")
+        buttons.data_button("Video Split", f"userset {user_id} menu VIDEO_SPLIT_OPTIONS")
+
+        buttons.data_button("Back", f"userset {user_id} video_processing", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        text = f"""⌬ <b>Video + Video Processing :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>Video Stream 1</b> → Primary video input
+┠ <b>Video Stream 2</b> → Secondary video input
+┠ <b>Video Merge</b> → Combine multiple videos
+┠ <b>Video Overlay</b> → Overlay one video on another
+┠ <b>Video Concat</b> → Concatenate videos sequentially
+┖ <b>Video Split</b> → Split video into segments"""
+
+    elif stype == "video_audio":
+        buttons.data_button("Audio Track 1", f"userset {user_id} menu AUDIO_TRACK_1")
+        buttons.data_button("Audio Track 2", f"userset {user_id} menu AUDIO_TRACK_2")
+        buttons.data_button("Audio Mix", f"userset {user_id} menu AUDIO_MIX_OPTIONS")
+        
+        buttons.data_button("Audio Replace", f"userset {user_id} menu AUDIO_REPLACE_OPTIONS")
+        buttons.data_button("Audio Sync", f"userset {user_id} menu AUDIO_SYNC_OPTIONS")
+        buttons.data_button("Audio Volume", f"userset {user_id} menu AUDIO_VOLUME_OPTIONS")
+
+        buttons.data_button("Back", f"userset {user_id} video_processing", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        text = f"""⌬ <b>Video + Audio Processing :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>Audio Track 1</b> → Primary audio input
+┠ <b>Audio Track 2</b> → Secondary audio input
+┠ <b>Audio Mix</b> → Mix multiple audio tracks
+┠ <b>Audio Replace</b> → Replace video audio
+┠ <b>Audio Sync</b> → Synchronize audio with video
+┖ <b>Audio Volume</b> → Adjust audio levels"""
+
+    elif stype == "video_subtitle":
+        buttons.data_button("Subtitle File", f"userset {user_id} menu SUBTITLE_FILE")
+        buttons.data_button("Subtitle Embed", f"userset {user_id} menu SUBTITLE_EMBED_OPTIONS")
+        buttons.data_button("Subtitle Burn", f"userset {user_id} menu SUBTITLE_BURN_OPTIONS")
+        
+        buttons.data_button("Subtitle Style", f"userset {user_id} menu SUBTITLE_STYLE_OPTIONS")
+        buttons.data_button("Subtitle Position", f"userset {user_id} menu SUBTITLE_POSITION_OPTIONS")
+        buttons.data_button("Subtitle Language", f"userset {user_id} menu SUBTITLE_LANGUAGE_OPTIONS")
+
+        buttons.data_button("Back", f"userset {user_id} video_processing", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        text = f"""⌬ <b>Video + Subtitle Processing :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>Subtitle File</b> → Upload subtitle file
+┠ <b>Subtitle Embed</b> → Embed subtitles in video
+┠ <b>Subtitle Burn</b> → Burn subtitles permanently
+┠ <b>Subtitle Style</b> → Configure subtitle appearance
+┠ <b>Subtitle Position</b> → Set subtitle position
+┖ <b>Subtitle Language</b> → Set subtitle language"""
+
+    elif stype == "rename":
+        buttons.data_button("Rename Pattern", f"userset {user_id} menu RENAME_PATTERN")
+        buttons.data_button("Prefix", f"userset {user_id} menu RENAME_PREFIX")
+        buttons.data_button("Suffix", f"userset {user_id} menu RENAME_SUFFIX")
+        
+        buttons.data_button("Extension Change", f"userset {user_id} menu RENAME_EXTENSION")
+        buttons.data_button("Case Change", f"userset {user_id} menu RENAME_CASE_OPTIONS")
+        buttons.data_button("Replace Text", f"userset {user_id} menu RENAME_REPLACE_OPTIONS")
+
+        buttons.data_button("Back", f"userset {user_id} video_processing", "footer")
+        buttons.data_button("Close", f"userset {user_id} close", "footer")
+        btns = buttons.build_menu(2)
+
+        # Get current rename settings
+        rename_pattern = user_dict.get("RENAME_PATTERN", "Not Set")
+        rename_prefix = user_dict.get("RENAME_PREFIX", "Not Set")
+        rename_suffix = user_dict.get("RENAME_SUFFIX", "Not Set")
+
+        text = f"""⌬ <b>File Rename Configuration :</b>
+┟ <b>Name</b> → {user_name}
+┃
+┠ <b>Rename Pattern</b> → <code>{escape(str(rename_pattern))}</code>
+┠ <b>Prefix</b> → <code>{escape(str(rename_prefix))}</code>
+┠ <b>Suffix</b> → <code>{escape(str(rename_suffix))}</code>
+┠ <b>Extension Change</b> → Modify file extensions
+┠ <b>Case Change</b> → Change filename case
+┖ <b>Replace Text</b> → Find and replace in filenames"""
+
     return text, btns
 
 
@@ -829,6 +1459,12 @@ async def add_file(_, message, ftype, rfunc):
         cpath = f"{getcwd()}/cookies/{user_id}"
         await makedirs(cpath, exist_ok=True)
         des_dir = f"{cpath}/cookies.txt"
+        await message.download(file_name=des_dir)
+    elif ftype == "WATERMARK_IMAGE_PATH":
+        wpath = f"{getcwd()}/watermarks/{user_id}"
+        await makedirs(wpath, exist_ok=True)
+        file_extension = message.document.file_name.split('.')[-1] if message.document and message.document.file_name else "png"
+        des_dir = f"{wpath}/watermark.{file_extension}"
         await message.download(file_name=des_dir)
     await delete_message(message)
     update_user_ldata(user_id, ftype, des_dir)
@@ -963,6 +1599,136 @@ async def set_option(_, message, option, rfunc):
         else:
             await send_message(message, "It must be dict!")
             return
+    elif option == "VIDEO_ENCODE_PRESET":
+        allowed_presets = ["ultrafast", "superfast", "veryfast", "faster", "fast", "medium", "slow", "slower", "veryslow"]
+        if value not in allowed_presets:
+            await send_message(message, f"Invalid preset. Please select from: {', '.join(allowed_presets)}")
+            return
+    elif option == "VIDEO_ENCODE_QUALITY":
+        allowed_qualities = ["1080p", "720p", "576p", "480p", "360p", "Original"]
+        if value not in allowed_qualities:
+            await send_message(message, f"Invalid quality. Please select from: {', '.join(allowed_qualities)}")
+            return
+    elif option == "VIDEO_ENCODE_CRF":
+        try:
+            crf_value = int(value)
+            if not (0 <= crf_value <= 51):
+                await send_message(message, "CRF must be between 0 and 51.")
+                return
+            value = crf_value
+        except ValueError:
+            await send_message(message, "CRF must be a number between 0 and 51.")
+            return
+    elif option == "VIDEO_ENCODE_AUDIO_BITRATE":
+        allowed_bitrates = ["64k", "96k", "128k", "192k", "256k", "320k"]
+        if value not in allowed_bitrates:
+            await send_message(message, f"Invalid audio bitrate. Please select from: {', '.join(allowed_bitrates)}")
+            return
+    elif option == "WATERMARK_OPACITY":
+        try:
+            opacity_value = float(value)
+            if not (0.0 <= opacity_value <= 1.0):
+                await send_message(message, "Opacity must be between 0.0 and 1.0.")
+                return
+            value = opacity_value
+        except ValueError:
+            await send_message(message, "Opacity must be a number between 0.0 and 1.0.")
+            return
+    elif option == "WATERMARK_COLOR":
+        if not value.startswith("#") or len(value) != 7:
+            await send_message(message, "Color must be in hex format like '#FFFFFF'.")
+            return
+    elif option == "WATERMARK_POSITION":
+        allowed_positions = ["top-left", "top-right", "bottom-left", "bottom-right", "center"]
+        if value not in allowed_positions:
+            await send_message(message, f"Invalid position. Please select from: {', '.join(allowed_positions)}")
+            return
+    elif option == "WATERMARK_TYPE":
+        allowed_types = ["text", "image"]
+        if value not in allowed_types:
+            await send_message(message, f"Invalid watermark type. Please select from: {', '.join(allowed_types)}")
+            return
+    elif option == "WATERMARK_SIZE":
+        allowed_sizes = ["small", "medium", "large"]
+        if value not in allowed_sizes:
+            await send_message(message, f"Invalid size. Please select from: {', '.join(allowed_sizes)}")
+            return
+    elif option == "WATERMARK_DURATION":
+        allowed_durations = ["full", "start", "end", "custom"]
+        if value not in allowed_durations:
+            await send_message(message, f"Invalid duration. Please select from: {', '.join(allowed_durations)}")
+            return
+    elif option == "WATERMARK_TEXT_BG":
+        if value.lower() in ["true", "1", "yes"]:
+            value = True
+        elif value.lower() in ["false", "0", "no"]:
+            value = False
+        else:
+            await send_message(message, "Text background must be true or false.")
+            return
+    elif option == "KEEP_SOURCE":
+        if value.lower() in ["true", "1", "yes"]:
+            value = True
+        elif value.lower() in ["false", "0", "no"]:
+            value = False
+        else:
+            await send_message(message, "Keep source must be true or false.")
+            return
+    elif option in ["STREAM_EXTRACT_OPTIONS", "STREAM_REMOVE_OPTIONS", "STREAM_SWAP_OPTIONS"]:
+        if value.startswith("{") and value.endswith("}"):
+            try:
+                value = eval(sub(r"\s+", " ", value))
+            except Exception as e:
+                await send_message(message, str(e))
+                return
+        else:
+            await send_message(message, "It must be dict!")
+            return
+    elif option in ["VIDEO_MERGE_OPTIONS", "VIDEO_OVERLAY_OPTIONS", "VIDEO_CONCAT_OPTIONS", "VIDEO_SPLIT_OPTIONS"]:
+        if value.startswith("{") and value.endswith("}"):
+            try:
+                value = eval(sub(r"\s+", " ", value))
+            except Exception as e:
+                await send_message(message, str(e))
+                return
+        else:
+            await send_message(message, "It must be dict!")
+            return
+    elif option in ["AUDIO_MIX_OPTIONS", "AUDIO_REPLACE_OPTIONS", "AUDIO_SYNC_OPTIONS", "AUDIO_VOLUME_OPTIONS"]:
+        if value.startswith("{") and value.endswith("}"):
+            try:
+                value = eval(sub(r"\s+", " ", value))
+            except Exception as e:
+                await send_message(message, str(e))
+                return
+        else:
+            await send_message(message, "It must be dict!")
+            return
+    elif option in ["SUBTITLE_EMBED_OPTIONS", "SUBTITLE_BURN_OPTIONS", "SUBTITLE_STYLE_OPTIONS", "SUBTITLE_POSITION_OPTIONS", "SUBTITLE_LANGUAGE_OPTIONS"]:
+        if value.startswith("{") and value.endswith("}"):
+            try:
+                value = eval(sub(r"\s+", " ", value))
+            except Exception as e:
+                await send_message(message, str(e))
+                return
+        else:
+            await send_message(message, "It must be dict!")
+            return
+    elif option == "RENAME_CASE_OPTIONS":
+        allowed_cases = ["upper", "lower", "title"]
+        if value not in allowed_cases:
+            await send_message(message, f"Invalid case option. Please select from: {', '.join(allowed_cases)}")
+            return
+    elif option == "RENAME_REPLACE_OPTIONS":
+        if value.startswith("{") and value.endswith("}"):
+            try:
+                value = eval(sub(r"\s+", " ", value))
+            except Exception as e:
+                await send_message(message, str(e))
+                return
+        else:
+            await send_message(message, "It must be dict!")
+            return
     update_user_ldata(user_id, option, value)
     await delete_message(message)
     await rfunc()
@@ -1018,6 +1784,12 @@ async def get_menu(option, message, user_id):
         back_to = "ffset"
     elif option in advanced_options:
         back_to = "advanced"
+    elif option in video_encode_options:
+        back_to = "video_encode"
+    elif option in watermark_options:
+        back_to = "watermark"
+    elif option in stream_options:
+        back_to = "ffset"  # Stream options go back to FF settings
     else:
         back_to = "back"
     buttons.data_button("Back", f"userset {user_id} {back_to}", "footer")
@@ -1145,6 +1917,21 @@ async def edit_user_settings(client, query):
     elif data[2] == "yttools":
         await query.answer()
         await update_user_settings(query, data[2])
+    elif data[2] in [
+        "video_encode",
+        "video_quality",
+        "video_crf",
+        "audio_bitrate",
+        "video_preset",
+        "video_processing",
+        "watermark",
+        "video_video",
+        "video_audio",
+        "video_subtitle",
+        "rename",
+    ]:
+        await query.answer()
+        await update_user_settings(query, data[2])
     elif data[2] == "menu":
         await query.answer()
         await get_menu(data[3], message, user_id)
@@ -1200,6 +1987,26 @@ async def edit_user_settings(client, query):
         rfunc = partial(get_menu, data[3], message, user_id)
         pfunc = partial(func, option=data[3], rfunc=rfunc)
         await event_handler(client, query, pfunc, rfunc)
+    elif data[2] == "set_quality":
+        await query.answer()
+        update_user_ldata(user_id, "VIDEO_ENCODE_QUALITY", data[3])
+        await update_user_settings(query, stype="video_quality")
+        await database.update_user_data(user_id)
+    elif data[2] == "set_crf":
+        await query.answer()
+        update_user_ldata(user_id, "VIDEO_ENCODE_CRF", int(data[3]))
+        await update_user_settings(query, stype="video_crf")
+        await database.update_user_data(user_id)
+    elif data[2] == "set_audio_bitrate":
+        await query.answer()
+        update_user_ldata(user_id, "VIDEO_ENCODE_AUDIO_BITRATE", data[3])
+        await update_user_settings(query, stype="audio_bitrate")
+        await database.update_user_data(user_id)
+    elif data[2] == "set_preset":
+        await query.answer()
+        update_user_ldata(user_id, "VIDEO_ENCODE_PRESET", data[3])
+        await update_user_settings(query, stype="video_preset")
+        await database.update_user_data(user_id)
     elif data[2] == "remove":
         await query.answer("Removed!", show_alert=True)
         if data[3] in [

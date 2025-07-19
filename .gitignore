@@ -3,6 +3,9 @@ config.py
 token.pickle
 rclone.conf
 .netrc
+__pycache__/
+.kiro/
+.gitignore
 log.txt
 cfg.zip
 accounts/*
