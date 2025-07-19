@@ -88,6 +88,16 @@ class _BotCommands:
         self.MyDramaListCommand = f"mdl{CMD_SUFFIX}"
         self.GDCleanCommand = [f"gdclean{CMD_SUFFIX}", f"gc{CMD_SUFFIX}"]
         self.BroadcastCommand = [f"broadcast{CMD_SUFFIX}", f"bc{CMD_SUFFIX}"]
+        
+        # Video Tools Commands
+        self.VideoInfoCommand = [f"vinfo{CMD_SUFFIX}", f"vi{CMD_SUFFIX}"]
+        self.CompressVideoCommand = [f"vcompress{CMD_SUFFIX}", f"vc{CMD_SUFFIX}"]
+        self.ConvertVideoCommand = [f"vconvert{CMD_SUFFIX}", f"vcv{CMD_SUFFIX}"]
+        self.VideoThumbnailCommand = [f"vthumb{CMD_SUFFIX}", f"vt{CMD_SUFFIX}"]
+        self.ExtractAudioCommand = [f"vaudio{CMD_SUFFIX}", f"va{CMD_SUFFIX}"]
+        self.TrimVideoCommand = [f"vtrim{CMD_SUFFIX}", f"vtr{CMD_SUFFIX}"]
+        self.ResizeVideoCommand = [f"vresize{CMD_SUFFIX}", f"vr{CMD_SUFFIX}"]
+        self.VideoHelpCommand = [f"vhelp{CMD_SUFFIX}", f"vh{CMD_SUFFIX}"]
 
 
 BotCommands = _BotCommands()
