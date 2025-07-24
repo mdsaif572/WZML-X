@@ -41,6 +41,11 @@ async def send_message(message, text, buttons=None, block=True, photo=None, **kw
                         disable_notification=True,
                         **kwargs,
                     )
+                if isinstance(message, str):
+                    # Log the issue for debugging
+                    LOGGER.error(f"String passed as message object: {message}")
+                    # Return the error message instead of trying to use reply
+                    return f"Error: String passed as message object: {message}"
                 return await message.reply_photo(
                     photo=photo,
                     reply_to_message_id=message.id,
@@ -78,6 +83,11 @@ async def send_message(message, text, buttons=None, block=True, photo=None, **kw
                 disable_notification=True,
                 reply_markup=buttons,
             )
+        if isinstance(message, str):
+            # Log the issue for debugging
+            LOGGER.error(f"String passed as message object: {message}")
+            # Return the error message instead of trying to use reply
+            return f"Error: String passed as message object: {message}"
         return await message.reply(
             text=text,
             quote=True,
